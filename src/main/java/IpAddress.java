@@ -27,7 +27,7 @@ public class IpAddress {
                 System.out.println(String.join(".", array1));
             }
         } else {
-            System.out.println("Вевдён неверный диапазон. Второй IP должен быть больше первого. Попробуйте ещё раз");
+            System.out.println("Введён неверный диапазон. Второй IP должен быть больше первого. Попробуйте ещё раз");
         }
     }
 }
