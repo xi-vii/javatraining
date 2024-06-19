@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class IpAddress {
 
     // Определяем последнее число в IP
-    private static int index(String address){
+    public static int getIndex(String address){
         String[] array = address.split("\\.");    // Массив из IP
         return Integer.parseInt(array[array.length - 1]);
     }
 
     // Возвращаем новый IP
-    private static String newIp(String address, int i) {
+    public static String getNewIp(String address, int i) {
         String[] array1 = address.split("\\.");    // Массив из IP
         String temp = String.valueOf(i);    // Преобразуем int в String
         array1[array1.length - 1] = temp;   // Заменяем крайнее значение в массиве
@@ -23,8 +23,8 @@ public class IpAddress {
         System.out.print("Введите второй IP: ");
         String address2 = new Scanner(System.in).nextLine(); // "192.168.0.5";
 
-        int startIndex = index(address1); // Начало диапазона
-        int endIndex = index(address2); // Конец диапазона
+        int startIndex = getIndex(address1); // Начало диапазона
+        int endIndex = getIndex(address2); // Конец диапазона
 
         // Простая проверка, что окончание диапазона больше его начала
         if (endIndex > startIndex) {
@@ -32,7 +32,7 @@ public class IpAddress {
             // Выводим все IP в диапазоне
             System.out.println("\nIP диапазона:");
             for (int i = startIndex + 1; i < endIndex; i++) {
-                String result = newIp(address1, i);
+                String result = getNewIp(address1, i);
                 System.out.println(result);
             }
         } else {
