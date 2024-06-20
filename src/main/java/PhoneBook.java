@@ -28,7 +28,7 @@ public class PhoneBook {
 
                 // Выводим по порядку телефоны наёденного контакта
                 for (String phoneNum : entry.getValue()) {
-                    System.out.println(num + ". " + phoneNum);
+                    System.out.print(num + ". " + phoneNum + "\n");
                     num++;
                 }
             }
