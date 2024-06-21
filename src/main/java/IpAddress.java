@@ -17,11 +17,13 @@ public class IpAddress {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Введите первый IP: ");
-        String address1 = new Scanner(System.in).nextLine(); // "192.168.0.1";
+        String address1 = scanner.nextLine(); // "192.168.0.1"; new Scanner(System.in).nextLine()
 
         System.out.print("Введите второй IP: ");
-        String address2 = new Scanner(System.in).nextLine(); // "192.168.0.5";
+        String address2 = scanner.nextLine(); // "192.168.0.5";
 
         int startIndex = getIndex(address1); // Начало диапазона
         int endIndex = getIndex(address2); // Конец диапазона
