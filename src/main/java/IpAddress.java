@@ -20,10 +20,10 @@ public class IpAddress {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введите первый IP: ");
-        String address1 = scanner.nextLine(); // "192.168.0.1"; new Scanner(System.in).nextLine()
+        String address1 = scanner.nextLine();
 
         System.out.print("Введите второй IP: ");
-        String address2 = scanner.nextLine(); // "192.168.0.5";
+        String address2 = scanner.nextLine();
 
         int startIndex = getIndex(address1); // Начало диапазона
         int endIndex = getIndex(address2); // Конец диапазона
