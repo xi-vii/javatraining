@@ -17,25 +17,16 @@ public class PhoneBook {
         // Доп. переменные
         String searchContact = new Scanner(System.in).nextLine();   // Ввод ФИО
         int num = 1;    // Порядковый номер телефона для вывода на экран
-        boolean haveContact = false;    // Есть ли такой контракт
 
         // Проверяем, есть ли такие ФИО в книге
-        for (Map.Entry<String, ArrayList<String>> entry : phoneBook.entrySet()) {
+        if (phoneBook.containsKey(searchContact)) {
 
-            // Если такой контракт есть в книге
-            if (entry.getKey().equals(searchContact)) {
-                haveContact = true;
-
-                // Выводим по порядку телефоны наёденного контакта
-                for (String phoneNum : entry.getValue()) {
-                    System.out.print(num + ". " + phoneNum + "\n");
-                    num++;
-                }
+            // Выводим по порядку телефоны найденного контакта
+            for (String phoneNum : phoneBook.get(searchContact)) {
+                System.out.print(num + ". " + phoneNum + "\n");
+                num++;
             }
-        }
-
-        // Если контакта нет, выводим сообщение
-        if (!haveContact) {
+        } else {
             System.out.println("У вас нет такого контакта!");
         }
     }
